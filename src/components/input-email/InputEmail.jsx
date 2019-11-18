@@ -1,6 +1,7 @@
 import React from 'react';
 import './InputEmail.css';
 
+
 /**
  * InputEmail
  * @version v1.0.0
@@ -12,24 +13,23 @@ import './InputEmail.css';
  * 
  */
 
-const InputEmail = ({email,setearEmail}) => {
 
+const InputEmail = ({value: inputGetter, onChange: onChangeInputSetter}) => {
 
+    const handlerChangeInput = (e) => onChangeInputSetter(e.target.value)  
 
-    const handlerOnChange = (e) => {
-        setearEmail(e.target.value);
-    }
-
-
-    return (
-        <div className="input-email">
-            <input 
-                placeholder = "Ingrese su email"
-                value = {email}
-                onChange= {handlerOnChange}
+    return(
+        <div className = "input-email">
+            <input
+                placeholder = "introduzca email"
+                value = {inputGetter}
+                onChange = {handlerChangeInput}
             />
         </div>
     );
-};
+
+}
 
 export default InputEmail;
+
+

@@ -1,20 +1,23 @@
-import React, {useState,useDebugValue} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import CardDefault from './components/card-default/CardDefault'
 import InputEmail from './components/input-email/InputEmail';
-import InputPassword from './components/input-password/InputPassword';
+
+
 
 function App() {
-  const [email,setEmail] = useState('aStateVariableEmail');
-  //useDebugValue(email, n => `hola${n}`);
+  const [email,setEmail] = useState('');
+  const [emailConfirm, setEmailConfirm] = useState('');
 
 
   return (
     <div className="App">
       <CardDefault title = "Hallo Welt"   />
-
+      <InputEmail value = {email} onChange = {setEmail}/>
+      <InputEmail value = {emailConfirm} onChange = {setEmailConfirm}/>
     </div>
   );
+ 
 }
 
 export default App;

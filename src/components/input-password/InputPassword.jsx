@@ -6,20 +6,20 @@ import './InputPassword.css';
  * @version v1.0.0
  * 
  * @param {*} props 
- * @param {string|number} props.e
- * @param {Function} props.x
+ * @param {string|number} props.password
+ * @param {Function} props.setPassword
  * 
  * 
  */
 const InputPassword = (props) => {
 
     useEffect( () => {
-        console.log('cambio email');
+        console.log('cambio');
     });
 
     const escuchador = e => {
         const {value} = e.target;
-        props.x(value);
+        props.setPassword(value);
     }
 
     return (
@@ -28,7 +28,7 @@ const InputPassword = (props) => {
             <input 
                 type = "password"
                 placeholder = "Ingresa contraseña"
-                value = {props.e}
+                value = {props.password}
                 onChange = {escuchador}
             />    
                         
